@@ -1,7 +1,9 @@
+{% load static %}
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +40,7 @@
 				<div class="form-inline">
                 {% if request.path == '/' %}
                     {% if user.is_authenticated %}
-                        <h3>Logged in as <b>{{ user.username }}</b> <a href="{% url 'logout' %}">Logout</a></h3>
+                        <h3>Logged in as <b>{{ user.username }}</b> <a class="badge badge-secondary" href="{% url 'logout' %}">Logout</a></h3>
                         {% else %}
                         <h2><a class="badge badge-secondary" href="{% url 'login' %}">Login</a></h2> <h2><a class="badge badge-secondary " href="{% url 'register' %}">Register</a></h2>
                      {% endif %}
@@ -47,8 +49,34 @@
 		</nav>
 	</header>
 
+
+
+
+
+
     {% block content %}
     {% endblock content %}
+
+    {% if request.path == '/' %}
+        {% for event in object_list %}
+            <div class="image">
+            <img class="col-sm-6 col-md-4"src="{{ event.image.url }}" alt="img">
+            <br/>
+
+            <div class="center_text">
+            Title:  {{ event.title }}<br/>
+            Desc:   {{ event.description }}<br/>
+                    {{ event.cost }}
+            </div>
+
+
+            <br/>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+
+
 
 
 <footer class="footer box-footer boxbg">
