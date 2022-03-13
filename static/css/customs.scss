@@ -1,0 +1,90 @@
+$enable-gradients true
+
+.temp_margin{
+  margin-top: 5%;
+}
+.navbar{
+  height: 6em;
+}
+.custombrand{
+  margin-right:4em;
+  margin-left:5em;
+  margin-top:-1em;
+}
+.nav-item{
+  margin-left:0.5em;
+  margin-right:0.5em;
+}
+.navbarcustom{
+  margin-left:2em;
+
+}
+
+.verticalalign{
+  vertical-align: middle;
+  margin-top:5px;
+}
+.custom2{
+  margin-right:5em;
+}
+
+.center_text{
+  text-align: center;
+}
+#navbar1{
+  -webkit-justify-content: space-between; /* Safari 6.1+ */
+  justify-content: space-between;
+  display: table;
+  table-layout: fixed;
+  width: calc(100% - 0.6em);
+  margin-bottom: 0.2em;
+  margin-top: 0.7em;
+}
+
+
+#navbar3{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  float: right;
+  margin-top: 0.2em;
+
+}
+
+.btn-primary {
+  background-color: #2b565a;
+  color: #c9c9c9;
+
+}
+.btn-primary:hover{
+  background-color:#193134;
+}
+.btn-default {
+  background-color: #38afb7;
+  color: #e0e0e0;
+
+}
+.btn-default:hover{
+  background-color:#26777d;
+}
+.btn-secondary {
+  background-color: #737387
+
+
+}
+.btn-button{
+
+}
+
+.floatright{
+  float: right;
+}
+.bg-gradient-dark{
+  background-image: linear-gradient(to bottom, #0d0d0d 0%, #505050 100%);}
+
+.logo{
+  width: 5em;
+  height: 2em;
+  margin-top:-0.2em;
+  transform: scale(2,2);
+}

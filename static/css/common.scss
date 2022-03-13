@@ -1,0 +1,133 @@
+
+.middle-class{
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+.rightclass{
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+  width: 10em;
+  float:right;
+  position: fixed;
+  top: 0;
+  margin-top: 10em;
+}
+.sidebox{
+  width: 15em;
+  padding: 2em;
+  border: 2px black;
+  align-content: center;
+  border-radius: 25px;
+}
+.fixed{
+  position:fixed;
+}
+.boxbg{
+  background-color: #b0b0b0;
+}
+
+.upvote_font{
+  font-family: montserrat;
+  font-size: 30px;
+}
+
+.box{
+  border: 2px black;
+  align-content: center;
+  border-radius: 25px;
+}
+.box-sizing{
+  margin:10px;
+  margin-left:2em;
+  margin-right:2em;
+  margin-bottom:25em;
+  padding:2em;
+  width:75em;
+  height:35em;
+}
+.box-sizing-small{
+  margin:10px;
+  margin-left:2em;
+  margin-right:2em;
+  margin-bottom:25em;
+  padding:2em;
+  width:75em;
+  height:15em;
+}
+
+.box-content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.margin-top{
+  margin-top:2em;
+}
+.margin-bottom{
+  margin-bottom:2em;
+}
+.margin-bottom2{
+  margin-bottom:10em;
+}
+.margin-left{
+  margin-left:10px;
+}
+
+.buttonbg{
+  background-color:#e3e3e3;
+}
+.btnd{
+  display: flex;
+}
+
+.box_nm{
+  width: 40em;
+  padding: 2em;
+  border: 2px black;
+  align-content: center;
+  border-radius: 25px;
+}
+.L_box{
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  border: 2px black;
+  align-content: center;
+  border-radius: 25px;
+}
+.image{
+  object-fit: fill;
+  max-height: 30em;
+  max-width:100%;
+  align-self: center;
+  margin: auto;
+  display: table;
+}
+.image_show{
+  max-width:150%;
+  max-height:150%;
+  min-width: 20em;
+  min-height: 10em;
+  align-self: center;
+  margin: auto;
+  display: table;
+  object-fit: fill;
+}
+
+.alignleft{
+  text-align:left;
+}
+.alignright{
+  text-align: right;
+}
+.leftmargin{
+  margin-left: 2em;
+}
+.hide{
+  visibility:hidden;
+}
