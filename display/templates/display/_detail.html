@@ -1,0 +1,25 @@
+{% extends 'display/base.html' %}
+{% load static %}
+
+
+{% block content %}
+ {% csrf_token %}
+    <div class="middle-class">
+
+            <div class="center_text box box-sizing boxbg ">
+            <img class="col-sm-4 col-md-7"src="{{ event.image.url }}" alt="img">
+            <br/>
+
+            <div class="">
+            Title:  {{ event.title }}<br/>
+            Desc:   {{ event.description }}<br/>
+                    {{ event.date }} {{ event.location  }} <br/>
+            Cost:   {{ event.cost }} <form action="{% url "buyTicket" event.pk %}" method="POST">  {% csrf_token %} <button type="submit" name="event_id" value="{{ event.id }}" class="badge badge-secondary" >Reserve</button>  </form>
+                    <form action="{% url 'likeEvent' event.pk %}" method="POST"> {% csrf_token %} <button type="submit" name="event_id2" value="{{ event.id }}" class="badge badge-secondary">Like</button></form> {{ total_likes }} Likes
+            </div>
+
+            <br/>
+        </div>
+    </div>
+
+{% endblock %}

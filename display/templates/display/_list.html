@@ -1,0 +1,22 @@
+{% extends 'display/base.html' %}
+{% load static %}
+
+
+{% block content %}
+ {% csrf_token %}
+    <div class="middle-class">
+    {% if request.path == '/' %}
+        {% for event in object_list %}
+            <div class="center_text box box-sizing margin-box boxbg "><a href="{% url 'detail' event.id %}">
+            <img class="image"src="{{ event.image.url }}"  alt="img"></a>
+            <br/>
+            Title:  {{ event.title }}<br/>
+                    {{ event.cost }} <form action="{% url "buyTicket" event.pk %}" method="POST">  {% csrf_token %} <button type="submit" name="event_id" value="{{ event.id }}" class="badge badge-secondary" >Reserve</button>  </form>
+
+            <br/>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}

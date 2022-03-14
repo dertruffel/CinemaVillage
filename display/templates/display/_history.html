@@ -1,0 +1,29 @@
+{% extends 'display/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% csrf_token %}
+
+    {% for x in object_list %}
+    {% if x.owner == request.user %}
+    <div class="middle-class">
+    <div class="center_text box box-sizing-small boxbg ">
+            <div class="">
+            Ticket ID: {{ x.id }}<br/>
+            Title:  {{ x.event }}<br/>
+            Ticket cost: {{ x.cost }}<br/>
+                    for {{ x.owner }}
+            <form action="{% url 'detail' x.event_id %}"><button type="submit" class="button">Details </button></form>
+            </div>
+    </div></div>
+
+
+
+    {% endif %}
+    {% endfor %}
+
+
+
+
+{% endblock %}

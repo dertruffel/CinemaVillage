@@ -1,7 +1,6 @@
 from django.contrib import admin
 # Register your models here.
-from .models import Event
-
+from .models import Event,Ticket
 
 """
 EVENT
@@ -11,6 +10,12 @@ EVENT
     cost = models.IntegerField()
     image = models.ImageField()
 """
-@admin.register(Event)
-class EventAdmin(admin.ModelAdmin):
-    list_display = ['title','author','description','cost','image']
+admin.site.register(Event)
+admin.site.register(Ticket)
+
+"""
+ Ticket(models.Model):
+    title = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="event_title")
+    cost = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="event_cost")
+    name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_username")
+    """

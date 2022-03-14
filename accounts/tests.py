@@ -32,3 +32,12 @@ class AccountsTESTS(TestCase):
 
         users = get_user_model().objects.all()
         self.assertEqual(users.count(), 1)
+
+    def test_signin_form(self):
+        user = get_user_model().objects.create(username=self.username,password=self.password)
+        response = self.client.post(reverse('login'), data={
+            'username': self.username,
+            'password': self.password,
+        })
+        self.assertEqual(response.status_code,200)
+        self.assertEqual(user.is_authenticated, True)
