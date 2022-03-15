@@ -40,6 +40,10 @@
 					</li>
                     {% endif %}
                 </ul>
+                <div class="middle-class"><form action="{% url 'search' %}" method="get">
+                <input name="q" type="text" placeholder="Search...">
+                </form></div>
+
 
 				<div class="form-inline">
                 {% if request.path == '/' %}

@@ -1,4 +1,6 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template import context
 from django.views.generic import ListView, DetailView
 
 from accounts.models import User
@@ -13,7 +15,21 @@ from django.contrib import messages
 
 class HomeView(ListView):
     model = Event
+    paginate_by = 3
     template_name = 'display/_list.html'
+
+
+class SearchView(ListView):
+    model = Event
+    paginate_by = 3
+    template_name = 'display/_list.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Event.objects.filter(
+            title__icontains=query
+        )
+        return object_list
 
 
 def buyTicket(request, *pk,**test):
@@ -69,9 +85,15 @@ class HomeDetail(DetailView):
         return context
 
 
+
 class TicketView(ListView):
     model = Ticket
+    paginate_by = 4
     template_name = 'display/_history.html'
+
+
+
+
 
 
 def LikeView(request, pk):
