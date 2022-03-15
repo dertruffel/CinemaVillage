@@ -1,7 +1,11 @@
-from django.http import HttpRequest
+
 from django.test import TestCase
 from django.contrib.auth import get_user_model
+from django.contrib import auth
+
 from django.urls import reverse
+
+import accounts.tests
 from .models import *
 from .views import *
 from accounts import tests
@@ -22,25 +26,31 @@ from accounts import tests
 
 class TestURLS(TestCase):
 
+
+
     def testIndex(self):
         self.assertEquals(self.client.get('/').status_code, 200)
 
-    def setUp(Event) -> None:
-        Event.id = 1
-        Event.title = 'test_title'
-        Event.author = 'admin'
-        Event.description = 'desc'
-        Event.cost = 20
-
+    def setUp(self) -> None:
+        self.username = 'testuser'
+        self.email = 'testuser@email.com'
+        self.password = 'password123!'
 
     def testBuying(self):
-
-        self.setUp()
-        get_user_model().objects.create(username="username", password="password")
-        self.client.login(username="username",password="password")
-        request = HttpRequest()
-        response = self.client.post(buyTicket(request=self.client,pk=Event.id))
-        self.assertEqual(response.status_code, 302) #redirect after purchase
+        user = get_user_model().objects.create(username=self.username, password=self.password)
+        response = self.client.post(reverse('login'), data={
+            'username': self.username,
+            'password': self.password,
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(user.is_authenticated,True)
+        requester=self
+        requester.user=user
+        test_makeEvent(user)
+        response = buyTicket(requester,pk=Event.pk,test=1)
+        self.assertEqual(response.status_code, 302)  # redirect after purchase
+        ticket = get_object_or_404(Ticket, id=1)
+        self.assertEqual(user.id,ticket.owner_id)
 
     def testHistory(self):
         self.assertEquals(self.client.get('/tickets/').status_code, 200)
