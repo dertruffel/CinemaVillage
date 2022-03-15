@@ -7,6 +7,7 @@ Strona główna wyświetla nam eventy(filmy), na które możemy zarezerwować bi
 W detalach eventów mamy cenę, opis i możliwość like'owania. 
 Projekt napisany na zasadzie templateow html z elementami bootstrapa.
 Uzyty sass z powodu preferencji.
+Do baz danych użyty postgres.
 
 //<br/>
 Python+django project with required libraries in requirements.txt
@@ -16,3 +17,4 @@ Main page displays events(movies), which we need to reserve a ticket for. Ticket
 In the user panel you can also change your password. In event details you can see the price, desc and like function.
 Project based on html templates with bootstrap elements.
 Sass used because of my preferences.
+Postgres is my database of choice.
