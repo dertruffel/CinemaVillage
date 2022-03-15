@@ -7,7 +7,7 @@
     <div class="middle-class">
     {% if request.path == '/' %}
         {% for event in object_list %}
-            <div class="center_text box box-sizing margin-box boxbg "><a href="{% url 'detail' event.id %}">
+            <div class="center_text box  margin-box boxbg "><a href="{% url 'detail' event.id %}">
             <img class="image"src="{{ event.image.url }}"  alt="img"></a>
             <br/>
             Title:  {{ event.title }}<br/>

@@ -1,0 +1,17 @@
+{% extends 'display/base.html' %}
+{% load static %}
+
+
+{% block content %}
+ {% csrf_token %}
+    <div class="middle-class">
+        <div class="center_text box box-size boxbg ">
+
+            <form action="{% url 'history' %}"><button type="submit" class="button">History</button></form><br/>
+            <form action="{% url 'edit' %}"><button type="submit" class="button">Change password</button></form><br/>
+
+
+        </div>
+    </div>
+
+{% endblock %}
