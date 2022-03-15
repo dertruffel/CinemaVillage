@@ -52,15 +52,7 @@ def buyTicket(request, pk, test=None):
     else:
         return redirect('accounts/login')
 
-''' id = models.BigAutoField(primary_key= True, auto_created= True)
-    title = models.CharField(max_length=255)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    description = models.CharField(max_length=255)
-    cost = models.IntegerField()
-    image = models.ImageField(upload_to='')
-    like = models.ManyToManyField(User, related_name="like",default=None, blank = True)
-    date = models.DateTimeField(blank=True)
-    location = models.CharField(max_length=255, default=None)'''
+
 def test_makeEvent(user):
     event = Event()
     event.title = 'Test event'

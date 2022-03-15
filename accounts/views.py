@@ -62,8 +62,6 @@ def userEdit(request):
             if form.is_valid():
                 usr = request.user
                 newpassword = form.cleaned_data['newpassword1'],
-                messages.info(request, newpassword[0])
-                messages.info(request, str(newpassword[0]))
                 usr.set_password(newpassword[0])
                 usr.save()
                 messages.success(request, 'Success')
