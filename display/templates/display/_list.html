@@ -11,7 +11,7 @@
             <img class="image"src="{{ event.image.url }}"  alt="img"></a>
             <br/>
             Title:  {{ event.title }}<br/>
-                    {{ event.cost }} <form action="{% url "buyTicket" event.pk %}" method="POST">  {% csrf_token %} <button type="submit" name="event_id" value="{{ event.id }}" class="badge badge-secondary" >Reserve</button>  </form>
+                    {{ event.cost }} <form action="{% url "buyTicket" event.id %}" method="POST">  {% csrf_token %} <button type="submit" name="event_id" value="{{ event.id }}" class="badge badge-secondary" >Reserve</button>  </form>
 
             <br/>
         </div>

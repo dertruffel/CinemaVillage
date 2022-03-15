@@ -32,7 +32,7 @@ class SearchView(ListView):
         return object_list
 
 
-def buyTicket(request, *pk,**test):
+def buyTicket(request, pk, test=None):
     if request.user.is_authenticated:
         ticket = Ticket()
         if test is not None:

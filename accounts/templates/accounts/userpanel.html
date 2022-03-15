@@ -5,7 +5,7 @@
 {% block content %}
  {% csrf_token %}
     <div class="middle-class">
-        <div class="center_text box box-size boxbg ">
+        <div class="center_text box box-sizing-small boxbg ">
 
             <form action="{% url 'history' %}"><button type="submit" class="button">History</button></form><br/>
             <form action="{% url 'edit' %}"><button type="submit" class="button">Change password</button></form><br/>
