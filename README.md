@@ -8,7 +8,7 @@ W detalach eventów mamy cenę, opis i możliwość like'owania.
 Projekt napisany na zasadzie templateow html z elementami bootstrapa.
 Uzyty sass z powodu preferencji.
 
-//
+//<br/>
 Python+django project with required libraries in requirements.txt
 
 To access most functions of the website you need an account.
